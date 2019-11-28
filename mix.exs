@@ -4,15 +4,18 @@ defmodule Arc.Ecto.Mixfile do
   @version "0.12.0"
 
   def project do
-    [app: :arc_ecto,
-     version: @version,
-     elixir: "~> 1.4",
-     elixirc_paths: elixirc_paths(Mix.env),
-     deps: deps(),
+    [
+      app: :arc_ecto,
+      version: @version,
+      elixir: "~> 1.4",
+      elixirc_paths: elixirc_paths(Mix.env()),
+      elixirc_options: [warnings_as_errors: true],
+      deps: deps(),
 
-    # Hex
-     description: description(),
-     package: package()]
+      # Hex
+      description: description(),
+      package: package()
+    ]
   end
 
   # Configuration for the OTP application
